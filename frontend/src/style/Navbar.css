@@ -1,0 +1,77 @@
+/* Default Navbar Styles */
+.navbar {
+              background-color: var(--primary);
+              padding: 10px 30px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              color: var(--text-light);
+}
+
+.navbar-left {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+}
+
+.navbar-left h1 {
+              margin: 0;
+              font-size: 1.6rem;
+}
+
+.navbar-right {
+              display: flex;
+              gap: 20px;
+              /* Space between links */
+}
+
+.navbar-right a {
+              color: var(--text-light);
+              font-weight: 600;
+              transition: color 0.2s ease-in-out;
+}
+
+.navbar-right a:hover {
+              color: var(--accent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+              .navbar {
+                            flex-direction: column;
+                            padding: 10px 20px;
+              }
+
+              .navbar-left {
+                            margin-bottom: 10px;
+                            /* Space between title and links */
+              }
+
+              .navbar-right {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            gap: 15px;
+                            margin-top: 10px;
+              }
+
+              .navbar-right a {
+                            font-size: 1rem;
+              }
+}
+
+/* Extra Small Screens (Mobile devices) */
+@media (max-width: 480px) {
+              .navbar-left h1 {
+                            font-size: 1.4rem;
+              }
+
+              .navbar-right {
+                            flex-direction: column;
+                            gap: 10px;
+              }
+
+              .navbar-right a {
+                            font-size: 0.9rem;
+              }
+}

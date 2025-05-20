@@ -1,0 +1,68 @@
+.form-container {
+              padding: 40px 20px;
+              background-color: var(--card-bg);
+              border-radius: 12px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.form-container h2 {
+              color: var(--primary);
+              text-align: center;
+              margin-bottom: 25px;
+}
+
+.inbuilt-note {
+              text-align: center;
+              color: var(--accent);
+              font-weight: bold;
+              margin-bottom: 10px;
+}
+
+.custom-btn {
+              display: block;
+              margin: 0 auto 25px;
+              padding: 10px 20px;
+              background-color: var(--secondary);
+              color: var(--text-light);
+              border: none;
+              border-radius: 6px;
+              font-weight: 600;
+}
+
+.custom-btn:disabled {
+              background-color: #ccc;
+}
+
+.input-form {
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              max-width: 600px;
+              margin: 0 auto;
+}
+
+.input-form label {
+              font-weight: 600;
+              color: var(--text-dark);
+}
+
+.input-form input {
+              padding: 10px;
+              border: 1px solid var(--border);
+              border-radius: 6px;
+}
+
+.visualize-btn {
+              margin-top: 20px;
+              background-color: var(--primary);
+              color: var(--text-light);
+              padding: 12px;
+              border: none;
+              border-radius: 6px;
+              font-weight: 600;
+              transition: background 0.3s ease-in-out;
+}
+
+.visualize-btn:hover {
+              background-color: #7d3c98;
+}
