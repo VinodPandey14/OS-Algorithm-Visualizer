@@ -11,25 +11,25 @@ def sjf_non_preemptive(input_data):
     current_time = 0
     result = []
     completed = 0
+    is_completed = [False] * len(processes)
+
     while completed < len(processes):
-        ready_queue = [p for p in processes if p["arrival_time"] <= current_time]
-        ready_queue.sort(key=lambda x: x["burst_time"])
-
+        ready_queue = [p for i, p in enumerate(processes)
+                       if p["arrival_time"] <= current_time and not is_completed[i]]
         if ready_queue:
+            ready_queue.sort(key=lambda x: x["burst_time"])
             current_process = ready_queue[0]
-            pid = current_process["pid"]
-            burst = current_process["burst_time"]
-            arrival = current_process["arrival_time"]
+            i = processes.index(current_process)
 
-            start_time = current_time
-            completion_time = start_time + burst
-            turnaround_time = completion_time - arrival
-            waiting_time = turnaround_time - burst
+            start_time = max(current_time, current_process["arrival_time"])
+            completion_time = start_time + current_process["burst_time"]
+            turnaround_time = completion_time - current_process["arrival_time"]
+            waiting_time = turnaround_time - current_process["burst_time"]
 
             result.append({
-                "pid": pid,
-                "arrival_time": arrival,
-                "burst_time": burst,
+                "pid": current_process["pid"],
+                "arrival_time": current_process["arrival_time"],
+                "burst_time": current_process["burst_time"],
                 "start_time": start_time,
                 "completion_time": completion_time,
                 "turnaround_time": turnaround_time,
@@ -37,6 +37,7 @@ def sjf_non_preemptive(input_data):
             })
 
             current_time = completion_time
+            is_completed[i] = True
             completed += 1
         else:
             current_time += 1

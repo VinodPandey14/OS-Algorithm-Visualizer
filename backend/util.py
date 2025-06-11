@@ -9,6 +9,8 @@ from algorithms.process.priority import priority_preemptive
 from algorithms.disk.fcfs import disk_fcfs
 from algorithms.disk.scan import scan
 from algorithms.disk.cscan import cscan
+from algorithms.disk.look import look
+from algorithms.disk.sstf import sstf
 
 # Importing memory management algorithms
 from algorithms.memory.first_fit import first_fit
@@ -35,6 +37,10 @@ def get_algorithm_function(algo_type, algo, input_data, quantum=None):
             return scan(input_data)
         elif algo == "C-SCAN":
             return cscan(input_data)
+        elif algo == "LOOK":
+            return look(input_data)
+        elif algo == "SSTF":
+            return sstf(input_data)
     
     elif algo_type == "memory":
         if algo == "First Fit":

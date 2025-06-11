@@ -1,24 +1,21 @@
-def cscan(input_data):
+def look(input_data):
     requests = input_data["requests"]
     initial_head = input_data["head"]
-    disk_size = 200
 
     if initial_head not in requests:
         requests.append(initial_head)
-    requests.append(0)
-    requests.append(disk_size - 1)
     requests.sort()
 
     initial_index = requests.index(initial_head)
+    left = requests[:initial_index][::-1]
     right = requests[initial_index + 1:]
-    left = requests[:initial_index]
 
-    seek_sequence = [initial_head] + right + [disk_size - 1, 0] + left
+    seek_sequence = [initial_head] + left + right
     seek_distances = []
     total_seek_count = 0
     current_position = initial_head
 
-    for req in right + [disk_size - 1, 0] + left:
+    for req in left + right:
         seek_count = abs(req - current_position)
         seek_distances.append(seek_count)
         total_seek_count += seek_count
@@ -32,7 +29,7 @@ def cscan(input_data):
         efficiency = 0
 
     return {
-        "algorithm": "C-SCAN",
+        "algorithm": "LOOK",
         "initial_head": initial_head,
         "seek_sequence": seek_sequence,
         "seek_distances": seek_distances,

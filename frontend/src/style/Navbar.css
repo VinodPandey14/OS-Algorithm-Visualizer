@@ -6,6 +6,7 @@
               justify-content: space-between;
               align-items: center;
               color: var(--text-light);
+              margin-bottom: 40px;
 }
 
 .navbar-left {

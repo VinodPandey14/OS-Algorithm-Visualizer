@@ -74,8 +74,21 @@ const AlgoSelection = () => {
           >
             <h4>SCAN</h4>
           </div>
+          <div
+            className="algo-card"
+            onClick={() => handleSelectAlgorithm("disk", "LOOK")}
+          >
+            <h4>LOOK</h4>
+          </div>
+          <div
+            className="algo-card"
+            onClick={() => handleSelectAlgorithm("disk", "SSTF")}
+          >
+            <h4>SSTF</h4>
+          </div>
         </>
       );
+      
     } else if (selectedType === "memory") {
       return (
         <>

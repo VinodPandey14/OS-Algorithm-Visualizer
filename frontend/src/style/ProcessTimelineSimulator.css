@@ -1,0 +1,74 @@
+.simulator-container {
+              margin-top: 20px;
+              padding: 15px;
+              background: #f9f9f9;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+}
+
+.simulator-header {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+}
+
+.clock,
+.executing {
+              font-size: 1.1rem;
+              font-weight: 500;
+}
+
+.active {
+              color: #d63384;
+              font-weight: bold;
+}
+
+.ready-queue {
+              margin-top: 10px;
+}
+
+.queue-box {
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-top: 5px;
+}
+
+.queue-item {
+              padding: 8px 14px;
+              background-color: #f0f0f0;
+              border: 1px solid #aaa;
+              border-radius: 5px;
+              font-weight: bold;
+              color: #444;
+}
+
+.executing-now {
+              background-color: #ffe066;
+              border-color: #ffd43b;
+}
+
+.completed {
+              background-color: #ced4da;
+              color: #6c757d;
+}
+
+.timeline-strip {
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 20px;
+              border-top: 2px solid #ccc;
+              padding-top: 10px;
+}
+
+.timeline-box {
+              width: 40px;
+              height: 40px;
+              margin: 2px;
+              border-radius: 4px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              font-weight: bold;
+}
