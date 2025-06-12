@@ -29,7 +29,6 @@ const InputForm = () => {
 
   useEffect(() => {
     if (type === "process" && algo === "FCFS") {
-      // FCFS doesn't need priority
       const { priority, ...rest } = input;
       setInput({ ...rest });
     }

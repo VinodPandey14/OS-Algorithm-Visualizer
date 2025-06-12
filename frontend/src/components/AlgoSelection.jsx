@@ -9,7 +9,7 @@ const AlgoSelection = () => {
 
   const handleSelectCategory = (type) => {
     setSelectedType(type);
-    setSelectedAlgorithm(null); // Reset selected algorithm when category changes
+    setSelectedAlgorithm(null); 
   };
 
   const handleSelectAlgorithm = (type, algo) => {

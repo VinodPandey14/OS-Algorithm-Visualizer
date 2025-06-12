@@ -102,7 +102,6 @@ const ProcessTimelineSimulator = ({ results }) => {
   );
 };
 
-// Color generator for processes
 const getColor = (pid) => {
   const colors = {
     P1: "#ff6f61",

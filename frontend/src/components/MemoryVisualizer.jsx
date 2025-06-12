@@ -1,7 +1,6 @@
 import React from "react";
 import "../style/MemoryVisualizer.css";
 
-// Define a palette of distinguishable colors
 const COLORS = [
   "#4a90e2",
   "#50e3c2",
@@ -15,12 +14,10 @@ const COLORS = [
 ];
 
 const MemoryVisualizer = ({ blocks, totalMemory }) => {
-  // 1. Get unique processes (excluding Free)
   const uniqueProcesses = Array.from(
     new Set(blocks.map((b) => b.process).filter((p) => p !== "Free"))
   );
 
-  // 2. Assign each process a unique color
   const colorMap = {};
   uniqueProcesses.forEach((p, idx) => {
     colorMap[p] = COLORS[idx % COLORS.length];

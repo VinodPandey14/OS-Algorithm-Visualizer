@@ -11,7 +11,7 @@ def visualize():
     input_data = data.get("inputData")
     algo_type = data.get("type")
     algo = data.get("algo")
-    quantum = data.get("quantum", 4)  # Default quantum for Round Robin is 4
+    quantum = data.get("quantum", 4) 
 
     result = get_algorithm_function(algo_type, algo, input_data, quantum)  
     return jsonify(result)

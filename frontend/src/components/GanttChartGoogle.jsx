@@ -24,7 +24,7 @@ const GanttChartGoogle = ({ segments }) => {
       { type: "number", label: "Duration" },
       { type: "number", label: "Percent Complete" },
       { type: "string", label: "Dependencies" },
-      { type: "string", role: "style" }, // ✨ NEW: Style column
+      { type: "string", role: "style" },
     ],
     ...segments.map((seg, index) => {
       const start = new Date(2020, 0, 1, 0, seg.start_time);
@@ -38,7 +38,7 @@ const GanttChartGoogle = ({ segments }) => {
         null,
         100,
         null,
-        style, // ✨ assign style
+        style, 
       ];
     }),
   ];
