@@ -20,7 +20,7 @@ const ResultPage = () => {
       const fetchResult = async () => {
         setLoading(true);
         try {
-          const response = await axios.post("http://localhost:5000/visualize", {
+          const response = await axios.post("https://os-algorithm-visualizer.onrender.com/visualize", {
             inputData: input,
             type: type,
             algo: algo,
