@@ -17,6 +17,14 @@ def visualize():
     result = get_algorithm_function(algo_type, algo, input_data, quantum)
     return jsonify(result)
 
+# ping route for uptime monitoring
+@app.route("/ping", methods=["GET"])
+def ping():
+    try:
+        return "pong", 200
+    except:
+        return "error", 500
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host="0.0.0.0", port=port)
