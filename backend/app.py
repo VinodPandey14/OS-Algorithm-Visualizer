@@ -4,7 +4,7 @@ from util import get_algorithm_function
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://os-algo.netlify.app"}})
 
 @app.route("/visualize", methods=["POST"])
 def visualize():
